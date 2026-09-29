@@ -119,6 +119,17 @@ dialog.md[open]{animation:sheet .38s cubic-bezier(.2,1,.3,1)}
 .ct .go:focus-visible{outline:4px solid var(--dark);outline-offset:3px}
 .me .mail{font-size:.85rem;margin-top:12px;opacity:.7;word-break:break-all}
 @media (max-width:720px){.me{flex-direction:column;padding:24px 20px;rotate:0deg}.ava{width:96px;height:96px}.ct .go{flex:1 1 100%;text-align:center;padding:14px}.ct .alt{padding:11px}}
+.c4{grid-column:1/-1;background:#c7a6ff;display:flex;gap:28px;align-items:center;justify-content:space-between;flex-wrap:wrap;rotate:-.8deg}
+.c4 .txt{flex:1 1 280px}
+.c4 .vis{margin:0;display:flex;gap:14px}
+.rgw{--s:clamp(78px,24vw,112px);position:relative;width:var(--s);height:var(--s);flex:none}
+.rgw::before{content:"";position:absolute;inset:0;border-radius:50%;background:conic-gradient(var(--g));border:3px solid var(--dark);animation:spin 6s linear infinite;animation-delay:var(--d,0s)}
+.rgw span{position:absolute;inset:calc(var(--s)*.13);border-radius:50%;background:#fff;border:3px solid var(--dark);display:grid;place-items:center;font-size:calc(var(--s)*.42)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.rmock{display:flex;flex-direction:column;align-items:center;gap:14px;padding-top:10px}
+.rmock .rgw{--s:120px;--g:var(--pink),var(--yellow),var(--cyan),var(--pink)}
+.rmock .sm{display:flex;gap:8px}.rmock .sm .rgw{--s:46px}.rmock .sm .rgw::before{border-width:2px}.rmock .sm .rgw span{border-width:2px}
+@media (max-width:720px){.c4{rotate:0deg}.c4 .vis{flex-basis:100%;justify-content:center}}
 footer{text-align:center;padding:0 20px 48px;font-weight:700;font-size:.9rem;opacity:.7}
 @media (max-width:720px){.grid{grid-template-columns:1fr}.c2,.c3{rotate:0deg}.c1 .vis{flex-basis:100%}.hero{padding-top:44px}.badge{width:84px;height:84px;font-size:.92rem}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
@@ -128,7 +139,7 @@ footer{text-align:center;padding:0 20px 48px;font-weight:700;font-size:.9rem;opa
 <div class="wrap">
   <header class="hero">
     <h1 id="t" aria-label="配信のおとも、「こんなのあったら」をかたちに。"><span class="ln">配信のおとも、</span><span class="ln">「こんなのあったら」</span><span class="ln">をかたちに。</span></h1>
-    <p class="sub">アイコン、プレビュー、ビンゴ。配信がちょっと楽しくなるサービスをそろえました。</p>
+    <p class="sub">アイコン、プレビュー、ビンゴ、リング。配信がちょっと楽しくなるサービスをそろえました。</p>
   </header>
 </div>
 <div class="ribbon" aria-hidden="true"><div class="track" id="tr"></div></div>
@@ -157,6 +168,18 @@ footer{text-align:center;padding:0 20px 48px;font-weight:700;font-size:.9rem;opa
       <h2>配信ビンゴさん</h2>
       <p>配信のテーマ、ビンゴで決めよう。歌う曲もおまかせ。</p>
       <span class="go">ひらく</span>
+    </a>
+    <a class="card c4" href="https://iconsouko.github.io/icon-composer/" data-tilt data-svc="ring">
+      <div class="txt">
+        <h2>アイコンリングさん</h2>
+        <p>アイコンとアイコンリングを重ね合わせて、1枚の画像に。</p>
+        <span class="go">ひらく</span>
+      </div>
+      <div class="vis rgs" aria-hidden="true">
+        <div class="rgw" style="--g:var(--pink),var(--yellow),var(--cyan),var(--pink)"><span>🐼</span></div>
+        <div class="rgw" style="--g:var(--cyan),#fff,var(--pink),var(--cyan);--d:-2s"><span>🐱</span></div>
+        <div class="rgw" style="--g:var(--yellow),var(--pink),#7dffb2,var(--yellow);--d:-4s"><span>🦁</span></div>
+      </div>
     </a>
   </div>
   <section class="me" aria-labelledby="mh2">
@@ -190,7 +213,7 @@ footer{text-align:center;padding:0 20px 48px;font-weight:700;font-size:.9rem;opa
     var s=l.textContent;l.textContent='';
     s.split('').forEach(function(c){var e=document.createElement('span');e.className='ch';e.setAttribute('aria-hidden','true');e.style.setProperty('--i',i++);e.textContent=c===' '?'\u00a0':c;l.appendChild(e)});
   });
-  var t='アイコン ★ プレビュー ★ ビンゴ ★ ',tr=document.getElementById('tr');
+  var t='アイコン ★ プレビュー ★ ビンゴ ★ リング ★ ',tr=document.getElementById('tr');
   for(var k=0;k<2;k++){var s=document.createElement('span');s.textContent=t.repeat(6);tr.appendChild(s)}
   var bg=document.getElementById('bg'),cells=[];
   [7,23,42,5,'★',61,18,34,50].forEach(function(n){var e=document.createElement('span');e.textContent=n;bg.appendChild(e);cells.push(e)});
@@ -215,7 +238,9 @@ footer{text-align:center;padding:0 20px 48px;font-weight:700;font-size:.9rem;opa
     preview:'<div class="vl" style="left:24px"></div><div class="vl" style="right:24px"></div><div class="warn">iPhoneは左右が見切れます</div><div class="cm" style="margin-top:150px">こんにちは!</div><div class="cm">素敵な歌声です!</div><div class="cm">今日も楽しみでした</div><div class="cm">ありがとうございます!</div>',
     bingo:'<div class="mt">配信ビンゴさん</div><div class="dots"><u class="on">1</u><u>2</u><u>3</u><u>4</u></div><div class="mo"><i style="background:#ff7a59">歌詞のワードで選曲</i><b>歌詞ビンゴくん</b></div><div class="mo"><i style="background:#21b59b">曲名の文字で選曲</i><b>曲名ビンゴ兄さん</b></div><div class="mo"><i style="background:#f0b429">ジャンル・時代で選曲</i><b>歌ネタビンゴ姉さん</b></div>'
   };
+  mk.ring='<div class="mt">アイコンリングさん</div><div class="rmock"><div class="rgw"><span>🐼</span></div><div class="sm"><div class="rgw" style="--g:var(--cyan),#fff,var(--pink),var(--cyan)"><span>🐱</span></div><div class="rgw" style="--g:var(--yellow),var(--pink),#7dffb2,var(--yellow)"><span>🦁</span></div><div class="rgw" style="--g:var(--pink),var(--cyan),var(--yellow),var(--pink)"><span>🐧</span></div></div></div>';
   var D={
+    ring:{c:'#c7a6ff',t:'アイコンリングさん',l:'アイコンにリングを重ねて、新しい1枚をつくろう。',p:['アイコンとアイコンリングを重ね合わせた画像を作成できる'],x:''},
     icon:{c:'#ff4f8b',t:'アイコン倉庫さん',l:'推しからもらったアイコンを、集めて、ちゃんと残せる場所。',p:['Googleアカウントで、かんたん・安全にログイン','ライバーごと・タグごとに、すっきり整理','お気に入りを選んで、自分だけのカードに'],x:'<div class="chips"><span>無料</span><span>広告なし</span></div>'},
     preview:{c:'#38e8ff',t:'配信プレビューさん',l:'カスタム背景が配信でどう見えるか、本番前に確認できます。',p:['画像を選ぶだけで、配信画面での見え方をチェック','「iPhoneは左右が見切れます」など注意点も一目でわかる','端末を選んで、見え方をくらべられる'],x:'<div class="chips"><span>iPhone</span><span>iPad</span><span>Xperia 10 VI</span><span>ほかの端末も</span></div><p class="hint">※見え方はあくまで目安です。</p>'},
     bingo:{c:'#ffe14a',t:'配信ビンゴさん',l:'配信のテーマ、ビンゴで決めよう。',p:['歌詞・曲名・ジャンルの3モードから選ぶだけ','3×3〜5×5のマス目。フリーマスも選べる','好きな画像を背景にして、オリジナルのカードに','配信中はマスをタップしてチェック。状態も保存できる'],x:'<div class="chips"><span>4ステップですぐ始められる</span></div>'}
