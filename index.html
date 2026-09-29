@@ -16,7 +16,7 @@ html{scroll-padding-top:env(safe-area-inset-top,0px)}
 body{margin:0;background:var(--bg);background-image:radial-gradient(var(--dot) 2px,transparent 2px);background-size:26px 26px;color:var(--ink);font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Yu Gothic",sans-serif;overflow-x:hidden}
 .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
 .hero{padding:56px 0 40px}
-h1{font-family:"Dela Gothic One","Hiragino Sans","Yu Gothic",sans-serif;font-weight:400;font-size:clamp(2.5rem,11vw,6.4rem);line-height:1.12;margin:0}
+h1{font-family:"Dela Gothic One","Hiragino Sans","Yu Gothic",sans-serif;font-weight:400;font-size:clamp(1.9rem,8vw,5rem);line-height:1.12;margin:0}
 h1 .ln{display:block}
 h1 .ch{display:inline-block;animation:drop .7s cubic-bezier(.3,1.7,.5,1) both;animation-delay:calc(var(--i)*55ms);cursor:default}
 h1 .ch:hover{animation:hop .45s ease}
@@ -39,7 +39,8 @@ h1 .ch:hover{animation:hop .45s ease}
 .c1 .txt{flex:1 1 280px}
 .c2{background:var(--cyan);rotate:-1.5deg}
 .c3{background:var(--yellow);rotate:1.5deg}
-.badge{position:absolute;top:-26px;left:-10px;width:96px;height:96px;border-radius:50%;background:var(--yellow);border:3px solid var(--dark);display:grid;place-items:center;font-family:"Dela Gothic One",sans-serif;font-size:1.05rem;line-height:1.15;text-align:center;animation:wob 2.6s ease-in-out infinite}
+.c1 .txt{padding-top:44px}
+.badge{position:absolute;top:-34px;left:-14px;width:96px;height:96px;border-radius:50%;background:var(--yellow);border:3px solid var(--dark);display:grid;place-items:center;font-family:"Dela Gothic One",sans-serif;font-size:1.05rem;line-height:1.15;text-align:center;animation:wob 2.6s ease-in-out infinite}
 @keyframes wob{0%,100%{rotate:-10deg}50%{rotate:8deg}}
 .vis{margin-bottom:20px}
 .c1 .vis{margin:0;flex:0 1 340px;width:100%}
@@ -126,8 +127,8 @@ footer{text-align:center;padding:0 20px 48px;font-weight:700;font-size:.9rem;opa
 <body>
 <div class="wrap">
   <header class="hero">
-    <h1 id="t" aria-label="配信のおとも、ぜんぶここに。"><span class="ln">配信のおとも、</span><span class="ln">ぜんぶ ここに。</span></h1>
-    <p class="sub">アイコン、プレビュー、ビンゴ。配信がちょっと楽しくなる3つのサービスをそろえました。</p>
+    <h1 id="t" aria-label="配信のおとも、「こんなのあったら」をかたちに。"><span class="ln">配信のおとも、</span><span class="ln">「こんなのあったら」</span><span class="ln">をかたちに。</span></h1>
+    <p class="sub">アイコン、プレビュー、ビンゴ。配信がちょっと楽しくなるサービスをそろえました。</p>
   </header>
 </div>
 <div class="ribbon" aria-hidden="true"><div class="track" id="tr"></div></div>
